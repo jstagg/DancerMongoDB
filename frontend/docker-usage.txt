@@ -1,0 +1,6 @@
+# Build
+docker build -t dancer-aliases .
+
+# Run it
+docker run --name dancer-aliases -p 3000:3000 -d dancer-aliases:latest
+

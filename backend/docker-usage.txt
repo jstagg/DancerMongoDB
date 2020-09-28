@@ -1,0 +1,11 @@
+# Build it
+docker build -t mongodb-aliases .
+
+# Run it
+docker run --name mongodb-aliases -p 27017:27017 -d mongodb-aliases:latest
+
+# Send it to docker hub repo
+docker commit -m "Added MongoDB Alias Server" -a "NAME" mongodb-aliases jstagg/repo/mongodb-aliases:latest
+docker logout
+docker login
+docker push jstagg/repo:mongodb-aliases

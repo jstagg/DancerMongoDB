@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+    db:
+        image: jstagg/repo:mongodb-aliases
+        container_name: mongodb-aliases
+        ports:
+            - "27017:27017"
+    web:
+        image: jstagg/repo:dancer-aliases
+        container_name: dancer-aliases
+        ports:
+            - "3000:3000"
+        depends_on: 
+            - db
+        restart: always
